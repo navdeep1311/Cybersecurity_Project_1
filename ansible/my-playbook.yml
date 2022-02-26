@@ -1,0 +1,36 @@
+---
+- name: First Playbook
+  hosts: webservers
+  become: true
+  tasks:
+
+  - name: Install Docker  (state=present is optional)
+    apt:
+      force_apt_get: yes
+      update_cache: yes
+      name: docker.io
+      state: present
+
+  - name: Install Python 3  (state=present is optional)
+    apt:
+      name: python3-pip
+      state: present
+
+  - name: Install Docker using PIP
+    pip:
+      name: docker
+      state: present
+
+  - name: Install Cyberxsecurity/dvwa using Docker-Container
+    docker_container:
+      name: dvwa
+      image: cyberxsecurity/dvwa
+      state: started
+      restart_policy: always
+      published_ports: "80:80"
+      # Publish container port 80 as host port 80
+
+  - name: Enable Docker service
+    systemd:
+      name: docker
+      enabled: yes
