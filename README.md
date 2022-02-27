@@ -50,7 +50,7 @@ The configuration details of each machine may be found below.
 
 | Name     	| Function 	| IP Address Public Private 	| Operating System   	|
 |----------	|----------	|---------------------------	|--------------------	|
-| Jump Box 	| Gateway  	| 23.99.2.6.222 10.0.0.8    	| Linux Ubuntu 20.04 	|
+| Jump Box 	| Gateway  	| 23.99.206.222 10.0.0.8    	| Linux Ubuntu 20.04 	|
 | Web-1    	| DVWA     	| 40.122.186.242 10.0.0.9   	| Linux Ubuntu 20.04 	|
 | Web-2    	| DVWA     	| 40.122.186.242 10.0.0.7   	| Linux Ubuntu 20.04 	|
 | Elk-VM   	| ELK      	| 40.78.3.208 10.1.0.4      	| Linux Ubuntu 20.04 	|
@@ -140,7 +140,12 @@ Listed below are the bash commands to run the playbooks
     - Move the Install Elk to Elk server file provided above under the /etc/ansible folder
     - ansible-playbook install-elk.yml (This will install the playbook on Elk VM)
     - Download the Filebeat using the curl command  
-         - curl ![Filebeat Download](https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat) > /etc/ansible/filebeat-config.yml 
+         - curl ![Filebeat Download](https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat) > /etc/ansible/filebeat-config.yml
     - Move the Filebeat Install on Elk VM file provided above to /etc/amsible/roles folder (if roles folder doesn't exist, create one)   
     - Change the Elk VM internal IP inside the filebeat.config.yml file, refer to the Filebeat Config file provided above
     - Go to /etc/ansible/roles folder and run the playbook using the command ansible-playbook <filename of the playbook> (in this case, its filebeat-playbook.yml)
+    - Download the Metricbeat using the curl command  
+         - curl ![Metricbeat Download](https://gist.githubusercontent.com/slape/58541585cc1886d2e26cd8be557ce04c/raw/0ce2c7e744c54513616966affb5e9d96f5e12f73/metricbeat) > /etc/ansible/metricbeat-config.yml
+    - Move the Metricbeat Install on Elk file provided above to /etc/ansible folder
+    - Change the Elk VM internal IP inside the metricbeat.config.yml file, refer to the Metricbeat Config file provided above
+    - Go to /etc/ansible folder and run the playbook using the command ansible-playbook <filename of the playbook> (in this case, its metricbeat-playbook.yml)
