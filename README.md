@@ -121,7 +121,7 @@ Playbook Information:
 - _Playbook file is install-elk.yml (refer Intall Elk to Elk Server under the playbook files provided above) and the file is placed under /etc/ansible folder inside the control node (Jump Box Provisioner). This playbook is used to configure the Elk VM_  
 
 Configuration Files Information:  
-- _The file that needs to be updated is /etc/ansible/hosts to include the internal IP addresses of the VM's where a specific container needs to be installed. For this project, we added Elk VM's internal IP to the hosts file (refer hosts file under the configuration files provided above), as shown below._  
+- _The file that needs to be updated is /etc/ansible/hosts to include the internal IP addresses of the VM's where a specific container needs to be installed. For this project, we added Elk VM's internal IP to the hosts file (refer hosts file under the configuration files provided above), as shown below. Hosts file has two sections one for webservers and second for Elk server which ensure containers are deployed on the defined IPs only_  
 
 ![Hosts File VM IP Addresses](Images/Hosts.png)      
 
@@ -130,3 +130,17 @@ URL to check that the ELK server is running:
 ![Elk Server URL](Images/Install-Elk-Kibana.png)  
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+Listed below are the bash commands to run the playbooks  
+    - ssh azadmin@JumpBoxProvisioner Public IP (23.99.206.222)
+    - sudo docker container list -a (locate your ansible container - mine is suspicious_jang)
+    - sudo docker start container (name of the container - suspicious jang)
+    - sudo docker attach container (name of the container - suspicious jang)
+- _After the successful execution of above commands, you will have root access for the Ansible container inside the Jump Box. Follow the commands below to execute the playbook._     
+    - Go to /etc/ansible location  
+    - Move the Install Elk to Elk server file provided above under the /etc/ansible folder
+    - ansible-playbook install-elk.yml (This will install the playbook on Elk VM)
+    - Download the Filebeat using the curl command  
+         - curl ![Filebeat Download](https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat) > /etc/ansible/filebeat-config.yml 
+    - Move the Filebeat Install on Elk VM file provided above to /etc/amsible/roles folder (if roles folder doesn't exist, create one)   
+    - Change the Elk VM internal IP inside the filebeat.config.yml file, refer to the Filebeat Config file provided above
+    - Go to /etc/ansible/roles folder and run the playbook using the command ansible-playbook <filename of the playbook> (in this case, its filebeat-playbook.yml)
