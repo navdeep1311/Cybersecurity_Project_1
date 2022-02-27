@@ -25,7 +25,6 @@
 
 10.0.0.9 ansible_python_interpreter=/usr/bin/python3
 10.0.0.7 ansible_python_interpreter=/usr/bin/python3
-#10.0.0.11 ansible_python_interpreter=/usr/bin/python3
 
 [elk]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3

@@ -97,13 +97,12 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
 - _Web-1 - 10.0.0.9_
 - _Web-2 - 10.0.0.7_
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
-- _Filebeat & Metricbeat_
+- _Filebeat_
+- _Metricbeat_
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
@@ -114,17 +113,20 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
 
 SSH into the control node and follow the steps below:
-- Copy the __install-elk.yml___ file to __/etc/ansible/install-elk.yml___.
-- Update the __/etc/ansible/hosts___ file to include...
+- Copy the __install-elk.yml__ file to __/etc/ansible/install-elk.yml__.
+- Update the __/etc/ansible/hosts__ file to include...
 - Run the playbook, and navigate to __http://[your.elk.ip]:5601/app/kibana__ to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Playbook is install-elk.yml and the file is placed under /etc/ansible folder inside the control node._
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _The file that needs to be updated is /etc/amsible/hosts to include the internal IP addresses of the VM's where a specific container needs to be installed. For this project, we added Elk VM's internal IP to the hosts file, as shown below._
+Playbook Information:  
+- _Playbook file is install-elk.yml (refer Intall Elk to Elk Server under the playbook files provided above) and the file is placed under /etc/ansible folder inside the control node (Jump Box Provisioner). This playbook is used to configure the Elk VM_  
 
-- _Which URL do you navigate to in order to check that the ELK server is running?_
-- _http://[40.78.3.208]:5601/app/kibana._
+Configuration Files Information:  
+- _The file that needs to be updated is /etc/ansible/hosts to include the internal IP addresses of the VM's where a specific container needs to be installed. For this project, we added Elk VM's internal IP to the hosts file (refer hosts file under the configuration files provided above), as shown below._  
+
+![Hosts File VM IP Addresses](Images/Hosts.png)      
+
+URL to check that the ELK server is running:    
+- _http://[40.78.3.208]:5601/app/kibana._    
+![Elk Server URL](Images/Install-Elk-Kibana.png)  
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
