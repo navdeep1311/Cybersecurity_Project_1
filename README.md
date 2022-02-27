@@ -4,17 +4,17 @@ The files in this repository were used to configure the network depicted below.
 
 ![Network Diagram](diagrams/Cybersecurity_Project1_Network_Diagram.pdf)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the __playbook (.yml)___ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the __playbook (.yml)__ file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _TODO: Enter the playbook file._
-[Install DVWA & Docker to Webservers](ansible/my-playbook.yml)
-[Install Elk to Elkserver](ansible/install-elk.yml)
-[Install Filebeat on Elk VM](ansible/filebeat-playbook.yml)
-[Install Metricbeat on Elk VM](ansible/metricbeat-playbook.yml)
+  - _Listed below are the playbook files_
+![Install DVWA & Docker to Webservers](ansible/my-playbook.yml)
+![Install Elk to Elkserver](ansible/install-elk.yml)
+![Install Filebeat on Elk VM](ansible/filebeat-playbook.yml)
+![Install Metricbeat on Elk VM](ansible/metricbeat-playbook.yml)
  - _Listed below are the configuration files_
-[Filebeat Config](ansible/filebeat-config.yml)
-[Metricbeat Config](ansible/metricbeat-config.yml)
-[Hosts](ansible/hosts)
+![Filebeat Config](ansible/filebeat-config.yml)
+![Metricbeat Config](ansible/metricbeat-config.yml)
+![Hosts](ansible/hosts)
 
 This document contains the following details:
 - Description of the Topology
@@ -29,13 +29,13 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly __available___, in addition to restricting __access___ to the network.
+Load balancing ensures that the application will be highly __available__, in addition to restricting __access__ to the network.
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 - _Load balancer balances the load between various VMs, thus making application highly available and protecting the "Availability" aspect of CIA security triage_
 - _Jump Box restricts the access to the virtual machines and allowing only remote connection through one VM (which is Jump Box) and certain type of traffic (SSH). hence securing the virtual machines/network or reducing the vulnerabiliy_
 
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the __available___ and system __logs___.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the __available__ and system __logs__.
 - _TODO: What does Filebeat watch for?_
 - _Filebeat is a lightweight shipper for forwarding and centralizing log data. Installed as an agent on the servers, Filebeat monitors the log files or specified locations, collect log events, and forwards them either to Elasticsearch or Logstash for indexing_
 - _TODO: What does Metricbeat record?_
@@ -56,11 +56,11 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 The machines on the internal network are not exposed to the public Internet.
 
-Only the __Jump Box Provisioner___ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the __Jump Box Provisioner__ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - _TODO: Add whitelisted IP addresses_
 - _My Home machine IP Address 98.200.158.197 is the only whiltelisted IP address which can connect to the Jump Box Provisioner via an Inbound Security Rule created under Class_Red_Team_NES Network Security Group._
 
-Machines within the network can only be accessed by __Jump Box Provisioner___.
+Machines within the network can only be accessed by __Jump Box Provisioner__.
 - _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
 - _My Home machine IP Address 98.200.158.197 is the only whitelisted IP address which can connect to the Elk VM via an Inbound Security Rule created under Elk-VM-nsg Network Security Group._
 
