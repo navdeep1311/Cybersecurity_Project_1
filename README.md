@@ -2,12 +2,19 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![diagrams/Cybersecurity_Project1_Network_Diagram.pdf](diagrams/Cybersecurity_Project1_Network_Diagram.pdf)
+![Network Diagram](diagrams/Cybersecurity_Project1_Network_Diagram.pdf)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the __playbook (.yml)___ file may be used to install only certain pieces of it, such as Filebeat.
 
   - _TODO: Enter the playbook file._
 [Install DVWA & Docker to Webservers](ansible/my-playbook.yml)
+[Install Elk to Elkserver](ansible/install-elk.yml)
+[Install Filebeat on Elk VM](ansible/filebeat-playbook.yml)
+[Install Metricbeat on Elk VM](ansible/metricbeat-playbook.yml)
+ - _Listed below are the configuration files_
+[Filebeat Config](ansible/filebeat-config.yml)
+[Metricbeat Config](ansible/metricbeat-config.yml)
+[Hosts](ansible/hosts)
 
 This document contains the following details:
 - Description of the Topology
