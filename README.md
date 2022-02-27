@@ -2,11 +2,48 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
+![TODO: Update the path with the name of your diagram](Images/diagram_Cybersecurity_Project1_Network_Diagram.pdf)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the __playbook (.yml)___ file may be used to install only certain pieces of it, such as Filebeat.
 
   - _TODO: Enter the playbook file._
+  ---
+  - name: First Playbook
+    hosts: webservers
+    become: true
+    tasks:
+
+    - name: Install Docker  (state=present is optional)
+      apt:
+        force_apt_get: yes
+        update_cache: yes
+        name: docker.io
+        state: present
+
+    - name: Install Python 3  (state=present is optional)
+      apt:
+        name: python3-pip
+        state: present
+
+    - name: Install Docker using PIP
+      pip:
+        name: docker
+        state: present
+
+    - name: Install Cyberxsecurity/dvwa using Docker-Container
+      docker_container:
+        name: dvwa
+        image: cyberxsecurity/dvwa
+        state: started
+        restart_policy: always
+        published_ports: "80:80"
+        # Publish container port 80 as host port 80
+
+    - name: Enable Docker service
+      systemd:
+        name: docker
+        enabled: yes
+
 
 This document contains the following details:
 - Description of the Topologu
