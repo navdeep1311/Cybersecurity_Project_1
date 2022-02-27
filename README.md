@@ -33,19 +33,20 @@ Load balancing ensures that the application will be highly __available__, in add
 
 Security aspect of load balancers  
   - _Load balancer balances the load between various VMs, thus making application highly available and protecting the "Availability" aspect of CIA security triage_  
-    
+
 Advantage of a Jump box  
   - _Jump Box restricts the access to the virtual machines and allowing only remote connection through one VM (which is Jump Box) and certain type of traffic (SSH). hence securing the virtual machines/network or reducing the vulnerabiliy_
 
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the __available__ and system __logs__.
-- _TODO: What does Filebeat watch for?_
-- _Filebeat is a lightweight shipper for forwarding and centralizing log data. Installed as an agent on the servers, Filebeat monitors the log files or specified locations, collect log events, and forwards them either to Elasticsearch or Logstash for indexing_
-- _TODO: What does Metricbeat record?_
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the __available__ and system __logs__.  
+
+What does Filebeat watch for?  
+- _Filebeat is a lightweight shipper for forwarding and centralizing log data. Installed as an agent on the servers, Filebeat monitors the log files or specified locations, collect log events, and forwards them either to Elasticsearch or Logstash for indexing_  
+
+What does Metricbeat record?  
 - _Metricbeat takes the metrics and statistics that it collects and ships them to the specified output, such as Elasticsearch or Logstash. It monitor/record metrics from the system and services running on the server, such as: Apache_
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     	| Function 	| IP Address Public Private 	| Operating System   	|
 |----------	|----------	|---------------------------	|--------------------	|
