@@ -61,11 +61,11 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet.
 
 Only the __Jump Box Provisioner__ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+
 - _My Home machine IP Address 98.200.158.197 is the only whiltelisted IP address which can connect to the Jump Box Provisioner via an Inbound Security Rule created under Class_Red_Team_NES Network Security Group._
 
 Machines within the network can only be accessed by __Jump Box Provisioner__.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+
 - _My Home machine IP Address 98.200.158.197 is the only whitelisted IP address which can connect to the Elk VM via an Inbound Security Rule created under Elk-VM-nsg Network Security Group._
 
 A summary of the access policies in place can be found in the table below.
