@@ -30,9 +30,10 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly __available__, in addition to restricting __access__ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
-- _Load balancer balances the load between various VMs, thus making application highly available and protecting the "Availability" aspect of CIA security triage_
-- _Jump Box restricts the access to the virtual machines and allowing only remote connection through one VM (which is Jump Box) and certain type of traffic (SSH). hence securing the virtual machines/network or reducing the vulnerabiliy_
+Security aspect of load balancers  
+  - _Load balancer balances the load between various VMs, thus making application highly available and protecting the "Availability" aspect of CIA security triage_  
+Advantage of a Jump box  
+  - _Jump Box restricts the access to the virtual machines and allowing only remote connection through one VM (which is Jump Box) and certain type of traffic (SSH). hence securing the virtual machines/network or reducing the vulnerabiliy_
 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the __available__ and system __logs__.
