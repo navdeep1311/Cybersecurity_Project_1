@@ -105,7 +105,7 @@ We have installed the following Beats on these machines:
 - _Metricbeat_
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+
 - _Filebeat collects the system logs from the Web-1 & Web-2 VMs and forward those to the Elk VM in an easy to read format._
 - _Refer screenshots below that shows System Logs from Web-1 and Web-2 VMs that have been moved to Kibana. Once the data is successfully received, by clicking on System logs dashboard button the second screen will appear that shows the System Logs, Sudo Commands, SSH logins and New users and groups which can be monitored on Web-1 and Web-2 VM's using the Filebeat._  
 ![Filebeat Navigate to Dashboard](Images/Filebeat_Syslogs_Dashboard.png)
@@ -153,7 +153,7 @@ Listed below are the bash commands to run the playbooks
     - Change the Elk VM internal IP inside the filebeat.config.yml file, refer to the Filebeat Config file provided above and the screenshots below  
     ![Filebeat Configuration 1](Images/Filebeat-Config-1.png)   
     ![Filebeat Configuration 2](Images/Filebeat-Config-2.png)   
-    - Go to /etc/ansible/roles folder and run the playbook using the command ansible-playbook <filename of the playbook> (in this case, its filebeat-playbook.yml). Successful execution of the playbook will produce the Kibana system log screenshot shown below  
+    - Go to /etc/ansible/roles folder and run the playbook using the command ansible-playbook <filename of the playbook> (in this case, its filebeat-playbook.yml). Successful execution of the playbook will produce the Kibana system log screenshot shown below when you click on the Check data button
     ![Filebeat Successful Execution](Images/Filebeat-Data.png)  
 
     - Download the Metricbeat using the curl command  
@@ -161,5 +161,5 @@ Listed below are the bash commands to run the playbooks
     - Move the Metricbeat Install on Elk file provided above to /etc/ansible folder
     - Change the Elk VM internal IP inside the metricbeat.config.yml file, refer to the Metricbeat Config file provided above
     ![Metricbeat Configuration](Images/Metricbeat-Config.png)   
-    - Go to /etc/ansible folder and run the playbook using the command ansible-playbook <filename of the playbook> (in this case, its metricbeat-playbook.yml). Successful execution of the playbook will produce the Kibana Metricbeat module stats as shown in screenshot below   
+    - Go to /etc/ansible folder and run the playbook using the command ansible-playbook <filename of the playbook> (in this case, its metricbeat-playbook.yml). Successful execution of the playbook will produce the Kibana Metricbeat module status as shown in screenshot below when you click on Check data button     
     ![Metricbeat Successful Execution](Images/Metricbeat-Data.png)  
