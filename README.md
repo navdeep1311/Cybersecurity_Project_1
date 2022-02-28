@@ -107,7 +107,14 @@ We have installed the following Beats on these machines:
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 - _Filebeat collects the system logs from the Web-1 & Web-2 VMs and forward those to the Elk VM in an easy to read format._
+- _Refer screenshots below that shows System Logs from Web-1 and Web-2 VMs that have been moved to Kibana. Once the data is successfully received, by clicking on System logs dashboard button the second screen will appear that shows the System Logs, Sudo Commands, SSH logins and New users and groups which can be monitored on Web-1 and Web-2 VM's using the Filebeat._  
+![Filebeat Navigate to Dashboard](Images/Filebeat_Syslogs_Dashboard.png)
+![Filebeat Dashboard for Webservers](Images/Filebeat_Syslogs_Webservers.png)  
+
 - _Metricbeat records metrics/statistics for system and services running on the Web-1 and Web-2 VMs and forward those to the Elk VM._
+- _Refer screenshots below that shows metrics/statistice from Web-1 and Web-2 VMs DVWA container that have been moved to Kibana. Once the data is successfully received, by clicking on Docker metrics dashboard button the second screen will appear that shows the CPU usage, Memory usage etc. for Web-1 and Web-2 VMs which can be analyzed using the Metricbeat._
+![Metricbeat Navigate to Docker Metrics Dashboard](Images/Metricbeat_Docker_Dashboard.png)
+![Metricbeat Statistics for Webservers](Images/Metricbeat_Stats.png)  
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
@@ -129,7 +136,7 @@ URL to check that the ELK server is running:
 - _http://[40.78.3.208]:5601/app/kibana._    
 ![Elk Server URL](Images/Install-Elk-Kibana.png)  
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+_Specific commands the user will need to run to download the playbook, update the files, etc._
 Listed below are the bash commands to run the playbooks  
     - ssh azadmin@JumpBoxProvisioner Public IP (23.99.206.222)  
     - sudo docker container list -a (locate your ansible container - mine is suspicious_jang)  
@@ -139,7 +146,7 @@ Listed below are the bash commands to run the playbooks
     - Go to /etc/ansible location  
     - Move the Install Elk to Elk server file provided above under the /etc/ansible folder
     - ansible-playbook install-elk.yml (This will install the playbook on Elk VM)  
-    
+
     - Download the Filebeat using the curl command  
          - curl ![Filebeat Download](https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat) > /etc/ansible/filebeat-config.yml
     - Move the Filebeat Install on Elk VM file provided above to /etc/amsible/roles folder (if roles folder doesn't exist, create one)   
