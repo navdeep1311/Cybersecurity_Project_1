@@ -73,8 +73,8 @@ A summary of the access policies in place can be found in the table below.
 | Name     	| Publicly Accessible 	| Allowed IP Addresses               	|
 |----------	|---------------------	|------------------------------------	|
 | Jump Box 	| Yes                 	| My Home Machine IP  98.200.158.197 	|
-| Web-1    	| No                  	| 10.0.0.9                           	|
-| Web-2    	| No                  	| 10.0.0.7                           	|
+| Web-1    	| No                  	| Jump Box 10.0.0.8 via SSH          	|
+| Web-2    	| No                  	| Jump Box 10.0.0.8 via SSH          	|
 | Elk-VM   	| Yes                 	| My Home Machine IP  98.200.158.197 	|
 
 ### Elk Configuration
