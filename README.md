@@ -108,7 +108,7 @@ These Beats allow us to collect the following information from each machine:
 
 - _Filebeat collects the system logs from the Web-1 & Web-2 VMs and forward those to the Elk VM in an easy to read format._
 - _Refer screenshots below that shows System Logs from Web-1 and Web-2 VMs that have been moved to Kibana. Once the data is successfully received, by clicking on System logs dashboard button the second screen will appear that shows the System Logs, Sudo Commands, SSH logins and New users and groups which can be monitored on Web-1 and Web-2 VM's using the Filebeat._  
-![Filebeat Navigate to Dashboard](Images/Filebeat_Syslogs_Dashboard.png)
+![Filebeat Navigate to Dashboard](Images/Filebeat_Syslog_Dashboard.png)
 ![Filebeat Dashboard for Webservers](Images/Filebeat_Syslogs_Webservers.png)  
 
 - _Metricbeat records metrics/statistics for system and services running on the Web-1 and Web-2 VMs and forward those to the Elk VM._
