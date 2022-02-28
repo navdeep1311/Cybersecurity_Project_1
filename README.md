@@ -159,7 +159,7 @@ Listed below are the bash commands to run the playbooks
     - Download the Metricbeat using the curl command  
          - curl https://gist.githubusercontent.com/slape/58541585cc1886d2e26cd8be557ce04c/raw/0ce2c7e744c54513616966affb5e9d96f5e12f73/metricbeat > /etc/ansible/metricbeat-config.yml
     - Move the Metricbeat Install on Elk file provided above to /etc/ansible folder
-    - Change the Elk VM internal IP inside the metricbeat.config.yml file, refer to the Metricbeat Config file provided above
+    - Change the Elk VM internal IP inside the metricbeat.config.yml file, refer to the Metricbeat Config file provided above  
     ![Metricbeat Configuration](Images/Metricbeat-Config.png)   
     - Go to /etc/ansible folder and run the playbook using the command ansible-playbook <filename of the playbook> (in this case, its metricbeat-playbook.yml). Successful execution of the playbook will produce the Kibana Metricbeat module status as shown in screenshot below when you click on Check data button     
     ![Metricbeat Successful Execution](Images/Metricbeat-Data.png)  
